@@ -8,7 +8,7 @@ use toy_rsa_lib::*;
 pub const EXP: u64 = 65537;
 
 ///λ(pq) returns the LCM of p-1 and q-1
-pub fn lambda(p: u32, q: u32) -> u64 {
+fn lambda(p: u32, q: u32) -> u64 {
     lcm((p as u64) - 1, (q as u64) - 1)
 }
 
@@ -44,10 +44,4 @@ pub fn decrypt(key: (u32, u32), msg: u64) -> u32 {
     let d: u64 = modinverse(EXP, lambda(key.0, key.1));
     let k: u64 = key.0 as u64 * key.1 as u64;
     modexp(msg as u64, d, k).try_into().unwrap()
-}
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {}
 }

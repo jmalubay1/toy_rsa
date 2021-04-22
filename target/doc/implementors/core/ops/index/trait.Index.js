@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["primes"] = [{"text":"impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/ops/index/trait.Index.html\" title=\"trait core::ops::index::Index\">Index</a>&lt;<a class=\"primitive\" href=\"https://doc.rust-lang.org/nightly/std/primitive.usize.html\">usize</a>&gt; for <a class=\"struct\" href=\"primes/struct.TrialDivision.html\" title=\"struct primes::TrialDivision\">TrialDivision</a>","synthetic":false,"types":["primes::TrialDivision"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
