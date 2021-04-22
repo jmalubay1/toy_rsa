@@ -18,6 +18,12 @@ fn lambda(p: u32, q: u32) -> u64 {
 /// works by generate-and-test, generating pairs of primes
 /// `p` `q` and testing that they satisfy `λ(pq) <= EXP` and
 /// that `λ(pq)` has no common factors with `EXP`.
+///
+/// # Examples
+///
+/// ```
+/// let pri_keys = genkey();
+/// ```
 pub fn genkey() -> (u32, u32) {
     let mut p: u32;
     let mut q: u32;
@@ -34,12 +40,24 @@ pub fn genkey() -> (u32, u32) {
 
 /// Encrypt the plaintext `msg` using the RSA public `key`
 /// and return the ciphertext.
+///
+/// # Examples
+///
+/// ```
+/// let cipher_text: u64 = encypt(public,plain_text);
+/// ```
 pub fn encrypt(key: u64, msg: u32) -> u64 {
     modexp(msg as u64, EXP, key)
 }
 
 /// Decrypt the cipertext `msg` using the RSA private `key`
 /// and return the resulting plaintext.
+///
+/// # Examples
+///
+/// ```
+/// let decrypted: u32 = decrypt(pri_keys,cipher_text);
+/// ```
 pub fn decrypt(key: (u32, u32), msg: u64) -> u32 {
     let d: u64 = modinverse(EXP, lambda(key.0, key.1));
     let k: u64 = key.0 as u64 * key.1 as u64;
